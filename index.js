@@ -115,6 +115,29 @@ res.send({"msg":"le bhai data","Data":data})
 
 
 
+app.delete("/delete",async (req,res)=>{
+let data = req.body;
+if(email==data.email){
+
+}else{
+    CDB(data.email)
+}
+ 
+let d= await Dbmodel.findOneAndDelete({_id:data.id})
+
+
+    res.send({"msg":"deleted"})
+
+
+
+})
+
+
+
+
+
+
+
 app.listen(8000,()=>{
 
 try {
